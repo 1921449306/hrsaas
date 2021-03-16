@@ -1,4 +1,3 @@
-'use strict'
 const path = require('path')
 const defaultSettings = require('./src/settings.js')
 
@@ -36,6 +35,11 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    proxy: {
+      '/api': {
+        target: 'http://ihrm-java.itheima.net/'
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

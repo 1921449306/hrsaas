@@ -14,6 +14,7 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+import request from '@/utils/request'
 
 /**
  * If you don't want to use mock-server
@@ -23,8 +24,8 @@ import '@/permission' // permission control
  * Currently MockJs will be used in the production environment,
  * please remove it before going online ! ! !
  */
-if (process.env.NODE_ENV === 'production') {
-}
+// if (process.env.NODE_ENV === 'production') {
+// }
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
@@ -32,6 +33,7 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+Vue.prototype.$request = request
 
 new Vue({
   el: '#app',
